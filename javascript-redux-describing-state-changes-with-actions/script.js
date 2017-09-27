@@ -171,9 +171,9 @@ const todoApp = Redux.combineReducers({
 
 const store = Redux.createStore(todoApp);
 const dispatch = (action) => {
-  console.log('----------------');
-  console.log('dispatching action:');
-  console.log(action);
+  console.log('----------------') || displayInPreview('----------------');
+  console.log('dispatching action:') || displayInPreview('dispatching action:');
+  console.log(action) || displayInPreview(action);
   store.dispatch(action);
 }
 const render = () => {
@@ -188,3 +188,14 @@ const render = () => {
 render();
 store.subscribe(render);
 // noprotect
+
+
+
+
+// display in plunker preview
+function displayInPreview(string) {
+  var newDiv = document.createElement("div"); 
+  var newContent = document.createTextNode(string); 
+  newDiv.appendChild(newContent);
+  document.body.appendChild(newDiv)
+}
