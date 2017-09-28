@@ -60,44 +60,58 @@ const todoApp = combineReducers({
 const { createStore } = Redux;
 const store = createStore(todoApp);
 
-console.log('Initial state:');
-console.log(store.getState());
-console.log('--------------');
+console.log('Initial state:') || displayInPreview('Initial state:');
+console.log(store.getState()) || displayInPreview(store.getState());
+console.log('--------------') || displayInPreview('--------------');
 
-console.log('Dispatching ADD_TODO.');
+
+console.log('Dispatching ADD_TODO.') || displayInPreview('Dispatching ADD_TODO.');
 store.dispatch({
   type: 'ADD_TODO',
   id: 0,
   text: 'Learn Redux'
 });
-console.log('Current state:');
-console.log(store.getState());
-console.log('--------------');
+console.log('Initial state:') || displayInPreview('Initial state:');
+console.log(store.getState()) || displayInPreview(store.getState());
+console.log('--------------') || displayInPreview('--------------');
 
-console.log('Dispatching ADD_TODO.');
+
+console.log('Dispatching ADD_TODO.') || displayInPreview('Dispatching ADD_TODO.');
 store.dispatch({
   type: 'ADD_TODO',
   id: 1,
   text: 'Go shopping'
 });
-console.log('Current state:');
-console.log(store.getState());
-console.log('--------------');
+console.log('Initial state:') || displayInPreview('Initial state:');
+console.log(store.getState()) || displayInPreview(store.getState());
+console.log('--------------') || displayInPreview('--------------');
 
-console.log('Dispatching TOGGLE_TODO.');
+
+console.log('Dispatching TOGGLE_TODO.') || displayInPreview('Dispatching TOGGLE_TODO.');
 store.dispatch({
   type: 'TOGGLE_TODO',
   id: 0
 });
-console.log('Current state:');
-console.log(store.getState());
-console.log('--------------');
+console.log('Initial state:') || displayInPreview('Initial state:');
+console.log(store.getState()) || displayInPreview(store.getState());
+console.log('--------------') || displayInPreview('--------------');
 
-console.log('Dispatching SET_VISIBILITY_FILTER');
+
+console.log('Dispatching SET_VISIBILITY_FILTER') || displayInPreview('Dispatching SET_VISIBILITY_FILTER');
 store.dispatch({
   type: 'SET_VISIBILITY_FILTER',
   filter: 'SHOW_COMPLETED'
 });
-console.log('Current state:');
-console.log(store.getState());
-console.log('--------------');
+console.log('Initial state:') || displayInPreview('Initial state:');
+console.log(store.getState()) || displayInPreview(store.getState());
+console.log('--------------') || displayInPreview('--------------');
+
+
+
+// display in plunker preview
+function displayInPreview(string) {
+  var newDiv = document.createElement("div"); 
+  var newContent = document.createTextNode(string); 
+  newDiv.appendChild(newContent);
+  document.body.appendChild(newDiv)
+}
