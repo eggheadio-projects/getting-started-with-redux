@@ -114,7 +114,7 @@ class FilterLink extends Component {
   }
 }
 FilterLink.contextTypes = {
-  store: React.PropTypes.object
+  store: React.PropTypes
 };
 
 const Footer = () => (
