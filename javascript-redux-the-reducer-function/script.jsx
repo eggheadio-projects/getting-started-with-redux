@@ -2,8 +2,10 @@
  * We will be explaining the code below
  * in the following lessons. For now,
  * feel free to click around and notice
- * how the current state tree is logged
- * to the console on every change.
+ * how the previous state tree, the
+ * dispatched action, and the next
+ * state tree are logged to the console
+ * on every change.
  */
 
 const ADD_TODO = 'ADD_TODO';
@@ -171,11 +173,15 @@ const todoApp = Redux.combineReducers({
 
 const store = Redux.createStore(todoApp);
 const dispatch = (action) => {
-  store.dispatch(action);
-  console.log('----------------');
-  console.log('current state:');
-  console.log(store.getState());
-}
+  console.log('----------------') || displayInPreview('----------------');
+  console.log('previous state:') || displayInPreview('previous state:');
+  console.log(store.getState()) || displayInPreview(store.getState());
+  console.log('dispatching action:') || displayInPreview('dispatching action:');
+  console.log(action) || displayInPreview(action);
+  store.dispatch(action) || displayInPreview(action);
+  console.log('next state:') || displayInPreview('next state:');
+  console.log(store.getState()) || displayInPreview(store.getState());
+};
 const render = () => {
   ReactDOM.render(
     <TodoApp
@@ -187,7 +193,16 @@ const render = () => {
 }
 render();
 store.subscribe(render);
-console.log('current state:');
-console.log(store.getState());
-
+console.log('initial state:') || displayInPreview('initial state:');
+console.log(store.getState()) || displayInPreview(store.getState());
 // noprotect
+
+
+
+// display in plunker preview
+function displayInPreview(string) {
+  var newDiv = document.createElement("div"); 
+  var newContent = document.createTextNode(string); 
+  newDiv.appendChild(newContent);
+  document.body.appendChild(newDiv)
+}

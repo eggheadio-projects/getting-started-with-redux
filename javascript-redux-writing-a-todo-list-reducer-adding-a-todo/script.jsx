@@ -43,4 +43,15 @@ const testAddTodo = () => {
 };
 
 testAddTodo();
-console.log('All tests passed.');
+console.log('All tests passed.') || displayInPreview('All tests passed.');
+
+
+
+
+// display in plunker preview
+function displayInPreview(string) {
+  var newDiv = document.createElement("div"); 
+  var newContent = document.createTextNode(string); 
+  newDiv.appendChild(newContent);
+  document.body.appendChild(newDiv)
+}
