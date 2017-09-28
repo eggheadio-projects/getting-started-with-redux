@@ -113,7 +113,7 @@ class FilterLink extends Component {
   }
 }
 FilterLink.contextTypes = {
-  store: React.PropTypes.object
+  store: React.PropTypes
 };
 
 const Footer = () => (
@@ -190,7 +190,7 @@ const AddTodo = (props, { store }) => {
   );
 };
 AddTodo.contextTypes = {
-  store: React.PropTypes.object
+  store: React.PropTypes
 };
 
 const getVisibleTodos = (
