@@ -173,14 +173,14 @@ const todoApp = Redux.combineReducers({
 
 const store = Redux.createStore(todoApp);
 const dispatch = (action) => {
-  console.log('----------------');
-  console.log('previous state:');
-  console.log(store.getState());
-  console.log('dispatching action:')
-  console.log(action);
-  store.dispatch(action);
-  console.log('next state:');
-  console.log(store.getState());
+  console.log('----------------') || displayInPreview('----------------');
+  console.log('previous state:') || displayInPreview('previous state:');
+  console.log(store.getState()) || displayInPreview(store.getState());
+  console.log('dispatching action:') || displayInPreview('dispatching action:');
+  console.log(action) || displayInPreview(action);
+  store.dispatch(action) || displayInPreview(action);
+  console.log('next state:') || displayInPreview('next state:');
+  console.log(store.getState()) || displayInPreview(store.getState());
 };
 const render = () => {
   ReactDOM.render(
@@ -193,6 +193,16 @@ const render = () => {
 }
 render();
 store.subscribe(render);
-console.log('initial state:');
-console.log(store.getState());
+console.log('initial state:') || displayInPreview('initial state:');
+console.log(store.getState()) || displayInPreview(store.getState());
 // noprotect
+
+
+
+// display in plunker preview
+function displayInPreview(string) {
+  var newDiv = document.createElement("div"); 
+  var newContent = document.createTextNode(string); 
+  newDiv.appendChild(newContent);
+  document.body.appendChild(newDiv)
+}
