@@ -174,7 +174,7 @@ const dispatch = (action) => {
   store.dispatch(action);
   console.log('----------------') || displayInPreview('----------------');
   console.log('current state:') || displayInPreview('current state:');
-  console.log(store.getState()) || displayInPreview(store.getState());
+  console.log(store.getState()) || displayInPreview(store.getState().visibilityFilter);
 }
 const render = () => {
   ReactDOM.render(
@@ -188,7 +188,7 @@ const render = () => {
 render();
 store.subscribe(render);
 console.log('current state:') || displayInPreview('current state:');
-console.log(store.getState()) || displayInPreview(store.getState());
+console.log(store.getState()) || displayInPreview(store.getState().visibilityFilter);
 
 // noprotect
 
