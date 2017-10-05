@@ -75,7 +75,7 @@ const { createStore } = Redux;
 const store = createStore(todoApp);
 
 console.log('Initial state:') || displayInPreview('Initial state:');
-console.log(store.getState()) || displayInPreview(store.getState());
+console.log(store.getState()) || displayInPreview(store.getState().visibilityFilter);
 console.log('--------------') || displayInPreview('--------------');
 
 console.log('Dispatching ADD_TODO.') || displayInPreview('Dispatching ADD_TODO.');
@@ -85,7 +85,7 @@ store.dispatch({
   text: 'Learn Redux'
 });
 console.log('Current state:') || displayInPreview('Current state:');
-console.log(store.getState()) || displayInPreview(store.getState());
+console.log(store.getState()) || displayInPreview(store.getState().visibilityFilter);
 console.log('--------------') || displayInPreview('--------------');
 
 console.log('Dispatching ADD_TODO.') || displayInPreview('Dispatching ADD_TODO.');
@@ -95,7 +95,7 @@ store.dispatch({
   text: 'Go shopping'
 });
 console.log('Current state:') || displayInPreview('Current state:');
-console.log(store.getState()) || displayInPreview(store.getState());
+console.log(store.getState()) || displayInPreview(store.getState().visibilityFilter);
 console.log('--------------') || displayInPreview('--------------');
 
 console.log('Dispatching TOGGLE_TODO.') || displayInPreview('Dispatching TOGGLE_TODO.');
@@ -104,7 +104,7 @@ store.dispatch({
   id: 0
 });
 console.log('Current state:') || displayInPreview('Current state:');
-console.log(store.getState()) || displayInPreview(store.getState());
+console.log(store.getState()) || displayInPreview(store.getState().visibilityFilter);
 console.log('--------------') || displayInPreview('--------------');
 
 console.log('Dispatching SET_VISIBILITY_FILTER') || displayInPreview('Dispatching SET_VISIBILITY_FILTER');
@@ -113,7 +113,7 @@ store.dispatch({
   filter: 'SHOW_COMPLETED'
 });
 console.log('Current state:') || displayInPreview('Current state:');
-console.log(store.getState()) || displayInPreview(store.getState());
+console.log(store.getState()) || displayInPreview(store.getState().visibilityFilter);
 console.log('--------------') || displayInPreview('--------------');
 
 
