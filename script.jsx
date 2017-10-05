@@ -194,7 +194,7 @@ const render = () => {
 render();
 store.subscribe(render);
 console.log('initial state:') || displayInPreview('initial state:');
-console.log(store.getState()) || displayInPreview(store.getState());
+console.log(store.getState()) || displayInPreview(store.getState().visibilityFilter);
 // noprotect
 
 
