@@ -41,3 +41,14 @@ function displayInPreview(string) {
   newDiv.appendChild(newContent);
   document.body.appendChild(newDiv)
 }
+
+// Function exported from deep-freeze lib
+function deepFreeze (o) {
+  if (o===Object(o)) {
+    Object.isFrozen(o) || Object.freeze(o)
+    Object.getOwnPropertyNames(o).forEach(function (prop) {
+      prop==='constructor'||deepFreeze(o[prop])
+    })
+  }
+  return o
+}
